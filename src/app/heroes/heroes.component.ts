@@ -31,7 +31,12 @@ export class HeroesComponent {
     this.selectedHero = hero;
   }
 
+  // getHeroes(): void {
+  //   this.heroes = this.heroService.getHeroes();
+  // }
+
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
   }
 }
